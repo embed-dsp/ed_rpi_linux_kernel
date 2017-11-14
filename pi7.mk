@@ -6,24 +6,12 @@
 # $Date:     $
 # $Revision: $
 
-export KERNEL = kernel7
+# This makefile is used to cross compile kernels for the following raspberry pi models:
+# * Pi 2
+# * Pi 3
+# * CM3
+
+KERNEL = kernel7
+DEFCONFIG = bcm2709_defconfig
 
 include pi-common.mk
-
-
-# Pi 2, Pi 3, or CM3
-.PHONY: config
-config:
-	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} -j4 bcm2709_defconfig
-
-
-.PHONY: install-kernel
-install-kernel:
-	# ...
-	mv $(BOOT)/kernel7.img $(BOOT)/kernel7-old.img
-	cp arch/arm/boot/zImage $(BOOT)/kernel7.img
-	# ...
-	rm -rf $(BOOT)/overlays-old
-	mv $(BOOT)/overlays $(BOOT)/overlays-old
-	mkdir $(BOOT)/overlays
-	cp arch/arm/boot/dts/overlays/*.dtb* $(BOOT)/overlays/
