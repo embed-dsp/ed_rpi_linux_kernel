@@ -7,10 +7,12 @@
 # $Revision: $
 
 # This makefile is used to cross compile kernels for the following raspberry pi models:
-# * Pi 0
-# * Pi 0 W
-# * Pi 1
-# * CM
+#   Raspberry Pi Zero
+#   Raspberry Pi Zero Wireless
+#   Raspberry Pi 1
+#   Compute Module
+
+KCFLAGS = "-march=armv7-a -mtune=cortex-a7"
 
 KERNEL = kernel
 DEFCONFIG = bcmrpi_defconfig
