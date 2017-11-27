@@ -20,7 +20,7 @@
 #CCPREFIX = /opt/gcc-arm/gcc-linaro-7.1.1-2017.08-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-
 
 # Cross Compile: Linaro tool chain (Linux): GCC 7.2.1, Default: 32-bit ARMv8 Cortex-A, hard-float, little-endian
- CCPREFIX = /opt/gcc-arm/gcc-linaro-7.2.1-2017.11-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-
+CCPREFIX = /opt/gcc-arm/gcc-linaro-7.2.1-2017.11-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-
 
 
 # ...

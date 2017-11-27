@@ -12,7 +12,7 @@
 #   Raspberry Pi 1
 #   Compute Module
 
-KCFLAGS = "-march=armv7-a -mtune=cortex-a7"
+KCFLAGS = "-march=armv6zk -mtune=arm1176jzf-s"
 
 PI = pi
 KERNEL = kernel
