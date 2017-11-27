@@ -7,6 +7,9 @@
 # $Revision: $
 
 
+# ----------------------------------------
+# Cross Compiler
+# ----------------------------------------
 # Cross Compile: Raspberry Pi tool chain (Linux): GCC 4.8.3, Default: 32-bit ARMv6 Cortex-A, hard-float, little-endian
 #CCPREFIX = /opt/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-
 
@@ -14,7 +17,10 @@
 #CCPREFIX = /opt/raspberry/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabihf-
 
 # Cross Compile: Linaro tool chain (Linux): GCC 7.1.1, Default: 32-bit ARMv8 Cortex-A, hard-float, little-endian
-CCPREFIX = /opt/gcc-arm/linux_x86/gcc-linaro-7.1.1-2017.08-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-
+CCPREFIX = /opt/gcc-arm/gcc-linaro-7.1.1-2017.08-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-
+
+# Cross Compile: Linaro tool chain (Linux): GCC 7.2.1, Default: 32-bit ARMv8 Cortex-A, hard-float, little-endian
+# CCPREFIX = /opt/gcc-arm/gcc-linaro-7.2.1-2017.11-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-
 
 
 # ...
