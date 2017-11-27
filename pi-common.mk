@@ -47,7 +47,7 @@ all:
 # ...
 .PHONY: help
 help:
-	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} help
+	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} KCFLAGS=${KCFLAGS} help
 
 
 # New config with default from ARCH supplied defconfig
@@ -59,43 +59,43 @@ defconfig:
 # Update current config utilising a provided .config as base
 .PHONY: oldconfig
 oldconfig:
-	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} -j4 oldconfig
+	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} KCFLAGS=${KCFLAGS} -j4 oldconfig
 
 
 # Update current config utilising a menu based program
 .PHONY: menuconfig
 menuconfig:
-	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} -j4 menuconfig
+	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} KCFLAGS=${KCFLAGS} -j4 menuconfig
 
 
 # Compressed kernel image (arch/arm/boot/zImage)
 .PHONY: zImage
 zImage:
-	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} -j4 zImage
+	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} KCFLAGS=${KCFLAGS} -j4 zImage
 
 
 # Build all modules
 .PHONY: modules
 modules:
-	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} -j4 modules
+	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} KCFLAGS=${KCFLAGS} -j4 modules
 
 
 # Build device tree blobs for enabled boards
 .PHONY: dtbs
 dtbs:
-	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} -j4 dtbs
+	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} KCFLAGS=${KCFLAGS} -j4 dtbs
 
 
 # Remove most generated files but keep the config and enough build support to build external modules
 .PHONY: clean
 clean:
-	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} -j4 clean
+	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} KCFLAGS=${KCFLAGS} -j4 clean
 
 
 # mrproper + remove editor backup and patch files
 .PHONY: distclean
 distclean:
-	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} -j4 distclean
+	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} KCFLAGS=${KCFLAGS} -j4 distclean
 
 
 # Build zImage, modules and dtbs
@@ -113,7 +113,7 @@ install: modules_install kernel_install
 # Install all modules to INSTALL_MOD_PATH (default: /)
 .PHONY: modules_install
 modules_install:
-	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} INSTALL_MOD_PATH=$(ROOT) modules_install
+	make -C linux ARCH=arm CROSS_COMPILE=${CCPREFIX} KCFLAGS=${KCFLAGS} INSTALL_MOD_PATH=$(ROOT) modules_install
 
 
 # Install kernel and device tree blobs
