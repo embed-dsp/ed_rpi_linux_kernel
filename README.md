@@ -20,7 +20,7 @@ git clone https://github.com/raspberrypi/linux.git
 ```
 
 ## Cross Compile using Raspberry Pi tool chain
-Perform these steps if you want to cross compile the Raspberry Pi Linux kernel using the Raspberry Pi tool chain.
+Perform these steps to install the Raspberry Pi tool chain.
 
 ```bash
 # Create directory for storing the Raspberry Pi tool chain
@@ -35,7 +35,7 @@ git clone https://github.com/raspberrypi/tools.git
 ```
 
 ## Cross Compile using Linaro tool chain
-Perform these steps if you want to cross compile the Raspberry Pi Linux kernel using the Linaro tool chain.
+Perform these steps to install the Linaro tool chain.
 
 ```bash
 # Create directory for storing the Linaro tool chain
