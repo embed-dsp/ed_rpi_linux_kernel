@@ -17,18 +17,18 @@
 #CCPREFIX = /opt/raspberry/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabihf-
 
 # Cross Compile: Linaro tool chain (Linux): GCC 7.1.1, Default: 32-bit ARMv8 Cortex-A, hard-float, little-endian
-CCPREFIX = /opt/gcc-arm/gcc-linaro-7.1.1-2017.08-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-
+#CCPREFIX = /opt/gcc-arm/gcc-linaro-7.1.1-2017.08-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-
 
 # Cross Compile: Linaro tool chain (Linux): GCC 7.2.1, Default: 32-bit ARMv8 Cortex-A, hard-float, little-endian
-# CCPREFIX = /opt/gcc-arm/gcc-linaro-7.2.1-2017.11-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-
+ CCPREFIX = /opt/gcc-arm/gcc-linaro-7.2.1-2017.11-x86_64_armv8l-linux-gnueabihf/bin/armv8l-linux-gnueabihf-
 
 
 # ...
 BUILD_DIR = $(shell pwd)/build
 
 # Directory for installing modules
-# ROOT = $(BUILD_DIR)/$(KERNEL)-$(shell date +%Y%m%d_%H%M%S)
-ROOT = $(BUILD_DIR)/$(KERNEL)_$(shell date +%Y%m%d)
+# ROOT = $(BUILD_DIR)/$(KERNEL)_$(shell date +%Y%m%d)
+ROOT = $(BUILD_DIR)/$(PI)_kernel_$(shell date +%Y%m%d)
 
 # Directory for installing kernel and device tree blobs
 BOOT = $(ROOT)/boot

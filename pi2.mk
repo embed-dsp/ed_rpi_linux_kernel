@@ -11,6 +11,7 @@
 
 KCFLAGS = "-march=armv7-a -mtune=cortex-a7"
 
+PI = pi2
 KERNEL = kernel7
 DEFCONFIG = bcm2709_defconfig
 

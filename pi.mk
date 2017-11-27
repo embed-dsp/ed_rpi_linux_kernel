@@ -14,6 +14,7 @@
 
 KCFLAGS = "-march=armv7-a -mtune=cortex-a7"
 
+PI = pi
 KERNEL = kernel
 DEFCONFIG = bcmrpi_defconfig
 
