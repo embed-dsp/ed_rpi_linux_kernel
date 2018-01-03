@@ -6,17 +6,17 @@ This repository contains make files and scripts for easy cross compiling of the 
 Get the tools
 =============
 
-## ed_pi_linux
+## ed_rpi_linux
 ```bash
-git clone https://github.com/embed-dsp/ed_pi_linux.git
+git clone https://github.com/embed-dsp/ed_rpi_linux.git
 ```
 
 ## Rasperry Pi Linux source
-Clone the Rasperry Pi Linux source tree into the `ed_pi_linux` directory.
+Clone the Rasperry Pi Linux source tree into the `ed_rpi_linux` directory.
 
 ```bash
-# Enter the ed_pi_linux directory
-cd ed_pi_linux
+# Enter the ed_rpi_linux directory
+cd ed_rpi_linux
 
 # Clone the Rasperry Pi Linux source tree
 git clone https://github.com/raspberrypi/linux.git
@@ -64,40 +64,40 @@ Build the Linux kernel
 
 ## Select Cross Compiler
 ```bash
-cd ed_pi_linux
+cd ed_rpi_linux
 
-# Edit pi-common.mk and select the cross compiler
-vim pi-common.mk
+# Edit rpi-common.mk and select the cross compiler
+vim rpi-common.mk
 ```
 
 ## Pi0, Pi0W, Pi1 and CM
 ```bash
-sudo make -f pi.mk clean
-sudo make -f pi.mk defconfig
-sudo make -f pi.mk build
+sudo make -f rpi.mk clean
+sudo make -f rpi.mk defconfig
+sudo make -f rpi.mk build
 
 # Install kernel, modules and device tree blobs into build/pi_kernel_<timestamp> folder.
-make -f pi.mk install
+make -f rpi.mk install
 ```
 
 ## Pi2
 ```bash
-sudo make -f pi2.mk clean
-sudo make -f pi2.mk defconfig
-sudo make -f pi2.mk build
+sudo make -f rpi2.mk clean
+sudo make -f rpi2.mk defconfig
+sudo make -f rpi2.mk build
 
 # Install kernel, modules and device tree blobs into build/pi2_kernel_<timestamp> folder.
-make -f pi2.mk install
+make -f rpi2.mk install
 ```
 
 ## Pi3 and CM3
 ```bash
-sudo make -f pi3.mk clean
-sudo make -f pi3.mk defconfig
-sudo make -f pi3.mk build
+sudo make -f rpi3.mk clean
+sudo make -f rpi3.mk defconfig
+sudo make -f rpi3.mk build
 
 # Install kernel, modules and device tree blobs into build/pi3_kernel_<timestamp> folder.
-make -f pi3.mk install
+make -f rpi3.mk install
 ```
 
 # Install built kernel on Rasperry Pi
@@ -105,13 +105,13 @@ Use `rsync` and LAN / WiFi to transfer the built kernel to the `/home/pi` direct
 
 ```bash
 # Pi0, Pi0W, Pi1 and CM
-rsync -avz build/pi_kernel_<timestamp> pi@<ip address>:/home/pi/
+rsync -avz build/rpi_kernel_<timestamp> pi@<ip address>:/home/pi/
 
 # Pi2
-rsync -avz build/pi2_kernel_<timestamp> pi@<ip address>:/home/pi/
+rsync -avz build/rpi2_kernel_<timestamp> pi@<ip address>:/home/pi/
 
 # Pi3 and CM3
-rsync -avz build/pi3_kernel_<timestamp> pi@<ip address>:/home/pi/
+rsync -avz build/rpi3_kernel_<timestamp> pi@<ip address>:/home/pi/
 ```
 
 Use `ssh` to login to Raspberry Pi.
@@ -124,15 +124,15 @@ Use the `install.sh` script to backup the current kernel into the `/root` direct
 
 ```bash
 # Pi0, Pi0W, Pi1 and CM
-cd pi_kernel_<timestamp>
+cd rpi_kernel_<timestamp>
 sudo ./install.sh
 
 # Pi2
-cd pi2_kernel_<timestamp>
+cd rpi2_kernel_<timestamp>
 sudo ./install.sh
 
 # Pi3 and CM3
-cd pi3_kernel_<timestamp>
+cd rpi3_kernel_<timestamp>
 sudo ./install.sh
 ```
 
