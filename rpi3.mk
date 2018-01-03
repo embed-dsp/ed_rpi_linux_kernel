@@ -1,5 +1,5 @@
 
-# Copyright (c) 2017 embed-dsp
+# Copyright (c) 2017-2018 embed-dsp
 # All Rights Reserved
 
 # $Author:   Gudmundur Bogason <gb@embed-dsp.com> $
@@ -12,8 +12,8 @@
 
 KCFLAGS = "-march=armv8-a -mtune=cortex-a53"
 
-PI = pi3
+RPI = rpi3
 KERNEL = kernel7
 DEFCONFIG = bcm2709_defconfig
 
-include pi-common.mk
+include rpi-common.mk

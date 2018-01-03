@@ -1,5 +1,5 @@
 
-# Copyright (c) 2017 embed-dsp
+# Copyright (c) 2017-2018 embed-dsp
 # All Rights Reserved
 
 # $Author:   Gudmundur Bogason <gb@embed-dsp.com> $
@@ -14,8 +14,8 @@
 
 KCFLAGS = "-march=armv6zk -mtune=arm1176jzf-s"
 
-PI = pi
+RPI = rpi
 KERNEL = kernel
 DEFCONFIG = bcmrpi_defconfig
 
-include pi-common.mk
+include rpi-common.mk
