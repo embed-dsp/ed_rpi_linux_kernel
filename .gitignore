@@ -1,0 +1,10 @@
+
+# Directories ...
+build/
+doc/
+firmware/
+linux/
+module/
+
+# Backup files
+*~
