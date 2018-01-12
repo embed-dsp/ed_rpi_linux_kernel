@@ -40,7 +40,7 @@ git clone https://github.com/raspberrypi/tools.git
 ```
 
 ## Cross Compile using Linaro tool chain
-Perform these steps to install the [Linaro tool chain](https://www.linaro.org/downloads).
+Perform these steps to install the [Linaro tool chain](https://releases.linaro.org/components/toolchain/binaries/latest/armv8l-linux-gnueabihf).
 
 ```bash
 # Create directory for storing the Linaro tool chain
@@ -66,38 +66,38 @@ Build the Linux kernel
 ```bash
 cd ed_rpi_linux
 
-# Edit rpi-common.mk and select the cross compiler
-vim rpi-common.mk
+# Edit Makefile and select the cross compiler
+vim Makefile
 ```
 
 ## RPi0, RPi0W, RPi1 and CM
 ```bash
-sudo make -f rpi.mk clean
-sudo make -f rpi.mk defconfig
-sudo make -f rpi.mk build
+sudo make RPI=rpi clean
+sudo make RPI=rpi defconfig
+sudo make RPI=rpi build
 
 # Install kernel, modules and device tree blobs into build/rpi_kernel_<timestamp> folder.
-make -f rpi.mk install
+make RPI=rpi install
 ```
 
 ## RPi2
 ```bash
-sudo make -f rpi2.mk clean
-sudo make -f rpi2.mk defconfig
-sudo make -f rpi2.mk build
+sudo make RPI=rpi2 clean
+sudo make RPI=rpi2 defconfig
+sudo make RPI=rpi2 build
 
 # Install kernel, modules and device tree blobs into build/rpi2_kernel_<timestamp> folder.
-make -f rpi2.mk install
+make RPI=rpi2 install
 ```
 
 ## RPi3 and CM3
 ```bash
-sudo make -f rpi3.mk clean
-sudo make -f rpi3.mk defconfig
-sudo make -f rpi3.mk build
+sudo make RPI=rpi3 clean
+sudo make RPI=rpi3 defconfig
+sudo make RPI=rpi3 build
 
 # Install kernel, modules and device tree blobs into build/rpi3_kernel_<timestamp> folder.
-make -f rpi3.mk install
+make RPI=rpi3 install
 ```
 
 # Install built kernel on Rasperry Pi
